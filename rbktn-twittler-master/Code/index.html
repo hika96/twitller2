@@ -7,28 +7,36 @@
 
 </head>
 
+
 <body>
+  <div>
+
   <button id='btn' type="button" onclick="display()">Click Me!</button>
   <div id='tweets'></div>
+  <div id='time'></div>
   <script>
+    $("body").css("background-image", 'url("twittler.jpg")');
+
     function display() {
-      var $body = $('#tweets');
-      $body.html('');
+      function display() {
+    var $body = $('#tweets');
+    $body.html('');
 
-      var index = streams.home.length - 1;
-      while (index >= 0) {
-        var tweet = streams.home[index];
-        var $tweet = $('<div></div>');
-        $tweet.text('@' + tweet.user + ': ' + tweet.message);
-        $tweet.appendTo($body);
-        index -= 1;
+    var index = streams.home.length - 1;
+    while (index >= 0) {
+      var tweet = streams.home[index];
+      var $tweet = $('<div></div>');
+      $tweet.text('@' + tweet.user + ': ' + tweet.message + ' ' + ' published:' + ' ' + tweet.created_at.getMinutes() + " minutes ago");
+      $tweet.appendTo($body);
+      index -= 1;
 
-      }
-
-      $(":button").css("background-color", "yellow");
     }
-    $(document).ready(display);
 
+    $(":button").css("background-color", "yellow");
+  }
+  $(document).ready(display);
+};
+ 
   </script>
 
 </body>
