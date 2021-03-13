@@ -4,31 +4,35 @@
 <head>
   <script src="jquery.js"></script>
   <script src="data_generator.js"></script>
+  <script src="twitt.js"></script>
 
 </head>
 
+
 <body>
+  <h1 style="color:blue;">Welcome to our twittler</h1>
+
+<p style="color:red;">Kay and Hiba</p>
+ 
+
+
+  <div>
+
   <button id='btn' type="button" onclick="display()">Click Me!</button>
+
+
+   <button onclick="two()">add tweet</button> 
+
+ 
+  <div id="#add">Some text some message..</div>
+
   <div id='tweets'></div>
+  <div id='time'></div>
   <script>
-    function display() {
-      var $body = $('#tweets');
-      $body.html('');
+    $("body").css("background-image", 'url("pp1.jpg")');
 
-      var index = streams.home.length - 1;
-      while (index >= 0) {
-        var tweet = streams.home[index];
-        var $tweet = $('<div></div>');
-        $tweet.text('@' + tweet.user + ': ' + tweet.message);
-        $tweet.appendTo($body);
-        index -= 1;
-
-      }
-
-      $(":button").css("background-color", "yellow");
-    }
-    $(document).ready(display);
-
+    
+ 
   </script>
 
 </body>
